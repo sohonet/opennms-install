@@ -9,7 +9,7 @@ trap 's=$?; echo >&2 "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 DEBIAN_FRONTEND=noninteractive
 ERROR_LOG="bootstrap.log"
 POSTGRES_USER="postgres"
-POSTGRES_PASS=""
+POSTGRES_PASS="postgres"
 DB_NAME="opennms"
 DB_USER="opennms"
 DB_PASS="opennms"
@@ -338,12 +338,12 @@ lockdownDbUser() {
 
 # Execute setup procedure
 clear
-checkRequirements
-showDisclaimer
+# checkRequirements
+# showDisclaimer
 prepare
 installJdk
 installPostgres
-queryDbCredentials
+# queryDbCredentials
 setDbCredentials
 installOnmsRepo
 installOnmsApp
